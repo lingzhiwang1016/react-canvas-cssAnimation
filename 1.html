@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<style type="text/css">
+  #small {
+     position:absolute;
+     left: 10px;
+     top: 10px;
+    }
+
+  #big {
+      position:absolute;
+     left: 10px;
+      top: 10px;
+  }
+</style>
+<body>
+<canvas id="small" style="border: 1px solid;" width="800" height="600"></canvas>
+<canvas id="big" style="border: 1px solid;" width="800" height="600"></canvas>
+
+<script type="text/javascript">
+      var canvas = document.getElementById('small');
+      var smallcontext = canvas.getContext('2d');
+      var photo = Array(1200);
+
+      for(var i =0; i <1200; i ++) {
+          drawPhoto(i);
+      }
+
+      /* // 绘制小图 */
+      function drawPhoto(i) {
+          photo[i] =new Image();
+          photo[i].src ="./p.jpg";
+          // photo[i].src ="./p ("+ (i %652) +").jpg";
+          photo[i].onload =function() {
+            smallcontext.drawImage(photo[i], (i %40) *20, ((i - (i %40)) /40) *20, 20, 20);
+          }
+      }
+
+      /* //绘制大图 */
+      var canvas = document.getElementById('big');
+      var bigcontext = canvas.getContext('2d');
+      bigpic =new Image();
+      bigpic.src ="p.jpg";
+      bigpic.onload =function() {
+         bigcontext.drawImage(bigpic, 0, 0, 800, 600);
+         changeAlpha(bigcontext);
+      }
+
+      /* //改变大图的透明度 */
+      function changeAlpha(context) {
+            var imgd = context.getImageData(0, 0, 800,600);
+            var pix = imgd.data;
+            for(var i =0, n = pix.length; i < n; i +=4) {
+                pix[i+3] =190;
+            }
+            context.putImageData(imgd, 0, 0);
+      }
+</script>
+</body>
+</html>
