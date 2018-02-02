@@ -1,0 +1,109 @@
+.keywords{
+  width: 6.82rem;
+  height: 6.8rem;
+  position: relative;
+  box-sizing:border-box;
+  border-radius: 0.08rem;
+  border:2px solid transparent;
+  background-clip:padding-box,border-box;
+  background-origin:padding-box,border-box;
+  background-image:linear-gradient(45deg, #000549, #000549),linear-gradient(135deg,#E45DFF,#06D4FD);
+}
+.card{
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 23px;
+  width: 1.96rem;
+  height: 2.7rem;
+  font-size: 15px;
+  color: white;
+  background-image: url('../../img/card.png');
+  background-size: 100% 100%;
+}
+.card>img{
+  width: 1.75rem;
+  height: 0.8rem;
+}
+
+.init-state{
+  left: 2.4rem;
+  top: -2.0rem;
+  opacity: 0;
+  transform: scale(2.2);
+}
+
+.animate1{
+  animation: moveToCenter 500ms forwards 200ms, moveToPosition1 600ms forwards 4100ms;
+}
+.animate2{
+  animation: moveToCenter 500ms forwards 500ms, moveToPosition2 600ms forwards 3700ms;
+}
+.animate3{
+  animation: moveToCenter 500ms forwards 800ms, moveToPosition3 600ms forwards 3400ms;
+}
+.animate4{
+  animation: moveToCenter 500ms forwards 1100ms, moveToPosition4 600ms forwards 3100ms;
+}
+.animate5{
+  animation: moveToCenter 500ms forwards 1400ms, moveToPosition5 600ms forwards 2800ms;
+}
+.animate6{
+  animation: moveToCenter 500ms forwards 1700ms, moveToPosition6 600ms forwards 2500ms;
+}
+
+@keyframes moveToCenter{
+  0%{
+    opacity: 1;
+    left: 9rem;
+  }
+  100%{
+    opacity: 1;
+    left: 2.4rem;
+  }
+}
+
+@keyframes moveToPosition1{
+  to{
+    left: 0.25rem;
+    top: 0.4rem;
+    transform: scale(1);
+  }
+}
+@keyframes moveToPosition2{
+  to{
+    left: 2.4rem;
+    top: 0.4rem;
+    transform: scale(1);
+  }
+}
+@keyframes moveToPosition3{
+  to{
+    left: 4.6rem;
+    top: 0.4rem;
+    transform: scale(1);
+  }
+}
+@keyframes moveToPosition4{
+  to{
+    left: 0.25rem;
+    top: 3.5rem;
+    transform: scale(1);
+  }
+}
+@keyframes moveToPosition5{
+  to{
+    left: 2.4rem;
+    top: 3.5rem;
+    transform: scale(1);
+  }
+}
+@keyframes moveToPosition6{
+  to{
+    left: 4.6rem;
+    top: 3.5rem;
+    transform: scale(1);
+  }
+}

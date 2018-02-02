@@ -1,0 +1,186 @@
+.container{
+  height: 100%;
+  background-image: url("./img/大背景.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position:top;
+  box-sizing: border-box;
+  position: relative;
+}
+/* 闪电 */
+.shanDian1{
+  position: absolute;
+  width: 0.93rem;
+  top: 74%;
+  left: 1.9%;
+
+}
+.shanDian2{
+  position: absolute;
+  width: 5.16rem;
+  top: 32.5%;
+  left: 8.6%;
+}
+.shanDian3{
+  position: absolute;
+  width: 1.74rem;
+  top: 60%;
+  left: 44.5%;
+  z-index: 2;
+}
+.shanDian4{
+  position: absolute;
+  width: 0.93rem;
+  top: 58.5%;
+  left: 92.7%;
+}
+
+@value animation_count: 1; /* 卡片动画执行次数 */
+@value animation_time: 0.3s; /* 单张卡片动画执行完成时间 */
+@value animation_timeOut_first: 0s; /* 第一张卡片延迟执行时间 */
+@value animation_timeOut_two: 0.3s; /* 第二张卡片延迟执行时间 */
+@value animation_timeOut_three: 0.6s; /* 第三张卡片延迟执行时间 */
+@value animation_timeOut_four: 0.9s; /* 第四张卡片延迟执行时间 */
+@value animation_timeOut_five: 1.2s; /* 第五张卡片延迟执行时间 */
+@value animation_timeOut_six: 1.5s; /* 第六张卡片延迟执行时间 */
+/* 抽奖卡片 */
+.card_container1{
+  animation: myfirst animation_time ease-out animation_timeOut_first animation_count;
+}
+.card_container2{
+  animation: mytwo animation_time ease-out animation_timeOut_two animation_count;
+}
+.card_container3{
+  animation: mythree animation_time ease-out animation_timeOut_three animation_count;
+}
+.card_container4{
+  animation: myfour animation_time ease-out animation_timeOut_four animation_count;
+}
+.card_container5{
+  animation: myfive animation_time ease-out animation_timeOut_five animation_count;
+}
+.card_container6{
+  animation: mysix animation_time ease-out animation_timeOut_six animation_count;
+}
+.card_container1,
+.card_container2,
+.card_container3,
+.card_container4,
+.card_container5,
+.card_container6{
+  position: absolute;
+  background-image: url("./img/卡片.png");
+  background-repeat:no-repeat;
+  background-size: contain;
+  background-position:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 6.09rem;
+  width: 5.18rem;
+  top: -44.8%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-fill-mode: forwards;
+}
+@keyframes myfirst {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    left: 8.7%;
+    top: 41.5%;
+  }
+}
+@keyframes mytwo {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    left: 22.9%;
+    top: 36.1%;
+  }
+}
+@keyframes mythree {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    left: 37.2%;
+    top: 39.9%;
+  }
+}
+@keyframes myfour {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    left: 51.4%;
+    top: 34.3%;
+  }
+}
+@keyframes myfive {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    left: 65.2%;
+    top: 35.1%;
+  }
+}
+@keyframes mysix {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    left: 79.9%;
+    top: 31%;
+  }
+}
+.card_container1 img,
+.card_container2 img,
+.card_container3 img,
+.card_container4 img,
+.card_container5 img,
+.card_container6 img{
+  height: 19%;
+}
+.card_wordNames{
+  height: 32%;
+  width: 30%;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  top: 0.1rem;
+}
+.card_ul,
+.card_ul_result{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FFFFFF;
+  width: 100%;
+  text-align: center;
+  font-size: 0.42rem;
+}
+.card_ul li{
+  margin-bottom: 0.1rem;
+}
+.card_ul_result li{
+  margin-bottom: 0.2rem;
+  opacity: 0.4;
+}
+.card_ul_result .result_li{
+  opacity: 1;
+  transform: scale(1.2);
+}

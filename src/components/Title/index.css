@@ -1,0 +1,7 @@
+.title {
+  padding: 0.4rem 0;
+  text-align: center;
+}
+.title>img{
+  height: 0.3rem;
+}

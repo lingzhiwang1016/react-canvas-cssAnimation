@@ -1,0 +1,163 @@
+.header {
+  height: 88px;
+  background-color: gray;
+}
+
+.header div {
+  float: left;
+  margin-left: 10px;
+}
+
+.container {
+  height: 100%;
+  background-image: url("./img/大背景.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.canvas_star {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.canvas_VANK {
+  display: block;
+  position: absolute;
+  z-index: 4;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.person_card {
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 42%;
+  opacity: 0;
+  transform: translateX(-50%);
+  background-image: url("./img/签到卡背景.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 11rem;
+  height: 4.45rem;
+  font-size: 0.32rem;
+  color: #0000FB;
+  letter-spacing: 0.0218rem;
+  line-height: 0.52rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5.5rem;
+}
+:global .animation_card_play{
+  animation: mytwo 5s linear  forwards;
+}
+:global .animation_card_replay{
+  animation: mytwo1 5s linear  forwards;
+}
+
+:global @keyframes mytwo {
+  0% {
+    opacity: 0
+  }
+  25% {
+    opacity: 1
+  }
+  75% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+:global @keyframes mytwo1 {
+  0% {
+    opacity: 0
+  }
+  25% {
+    opacity: 1
+  }
+  75% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+.person_name {
+  font-size: 0.58rem;
+  color: #0000FB;
+  letter-spacing: 0.0395rem;
+  margin-bottom: 0.144rem;
+}
+
+.person_img {
+  background-image: url("./img/头像背景.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-right: 0.5rem;
+  width: 2.654rem;
+  height: 2.654rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+:global .animation_img_play{
+  animation: myfirst 5s linear forwards;
+}
+:global .animation_img_replay{
+  animation: myfirst1 5s linear forwards;
+}
+
+:global @keyframes myfirst {
+  0% {
+    transform: scale(0)
+  }
+  25% {
+    transform: scale(1)
+  }
+  75% {
+    transform: scale(1)
+  }
+  100% {
+    transform: scale(0)
+  }
+}
+
+:global @keyframes myfirst1 {
+  0% {
+    transform: scale(0)
+  }
+  25% {
+    transform: scale(1)
+  }
+  75% {
+    transform: scale(1)
+  }
+  100% {
+    transform: scale(0)
+  }
+}
+.person_img img {
+  width: 2.48rem;
+  height: 2.48rem;
+  border-radius: 50%;
+}
+
+.person_info {
+  /* opacity: 0; */
+}

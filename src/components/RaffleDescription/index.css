@@ -1,0 +1,11 @@
+.raffle-description{
+  width: 6.82rem;
+  font-size: 0.3rem;
+  line-height: 0.6rem;
+  color: white;
+}
+.raffle-description>P{
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.6rem;
+}

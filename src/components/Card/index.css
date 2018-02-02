@@ -1,0 +1,18 @@
+.card{
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	position: absolute;
+  font-size: 23px;
+  width: 1.96rem;
+  height: 2.7rem;
+  font-size: 0.3rem;
+  color: white;
+  background-image: url('../../img/card.png');
+  background-size: 100% 100%;
+}
+.card>img{
+  width: 1.75rem;
+  height: 0.8rem;
+}

@@ -1,8 +1,11 @@
-# canvas
-马赛克效果-千张图片拼成特定形状
+开发：
+http://annual-d.maysatech.com/home/qiandao
 
-###### 1.html =>呈现一张图片ASCII字符效果
+测试：
+http://annual-t.maysatech.com/home/qiandao
 
-###### 2.html =>千张图片拼成特定形状
+正式：
+http://annual.maysatech.com/home/qiandao
 
-###### config.js =>配置
+
+MP_verify_znIWCRwu8j3eSlmG.txt:厦门梅沙科技

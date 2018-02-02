@@ -1,0 +1,15 @@
+.button-validation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.24rem;
+  color: white;
+  width: 2.08rem;
+  height: 0.92rem;
+  background-color: none;
+  border: none;
+  background-size: 100% 100%;
+}

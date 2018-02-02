@@ -1,0 +1,31 @@
+
+.header {
+  height: 88px;
+  background-color: gray;
+}
+
+.header div {
+  float: left;
+  margin-left: 0.01rem;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  z-index: 999;
+  position: relative;
+  width: 5.88rem;
+  height: 0.92rem;
+  margin-bottom: 0.3rem;
+}
+
+.bottomSection {
+  height: 1rem;
+}
+.space-photo-bottom {
+  height: 0.35rem;
+}

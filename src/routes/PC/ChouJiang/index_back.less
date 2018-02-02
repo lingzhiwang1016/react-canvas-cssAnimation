@@ -1,0 +1,172 @@
+.container {
+  height: 100%;
+  background-image: url("\./img/大背景.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.card_container1 {
+  animation: myfirst 0.5s ease-out 0s 1;
+}
+
+.card_container2 {
+  animation: mytwo 0.5s ease-out 0.5s 1;
+}
+
+.card_container3 {
+  animation: mythree 0.5s ease-out 1s 1;
+}
+
+.card_container4 {
+  animation: myfour 0.5s ease-out 1.5s 1;
+}
+
+.card_container5 {
+  animation: myfive 0.5s ease-out 2s 1;
+}
+
+.card_container6 {
+  animation: mysix 0.5s ease-out 2.5s 1;
+}
+
+.card_container1,
+.card_container2,
+.card_container3,
+.card_container4,
+.card_container5,
+.card_container6 {
+  position: absolute;
+  background-image: url("\./img/卡片.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 44.7%;
+  width: 11.3%;
+  top: -44.8%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-fill-mode: forwards;
+}
+
+@keyframes myfirst {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    left: 8.7%;
+    top: 44.5%;
+  }
+}
+
+@keyframes mytwo {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    left: 22.9%;
+    top: 44.5%;
+  }
+}
+
+@keyframes mythree {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    left: 37.2%;
+    top: 44.5%;
+  }
+}
+
+@keyframes myfour {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    left: 51.4%;
+    top: 44.5%;
+  }
+}
+
+@keyframes myfive {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    left: 65.2%;
+    top: 44.5%;
+  }
+}
+
+@keyframes mysix {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    left: 79.9%;
+    top: 44.5%;
+  }
+}
+
+.card_container1 img,
+.card_container2 img,
+.card_container3 img,
+.card_container4 img,
+.card_container5 img,
+.card_container6 img {
+  height: 19%;
+}
+
+.card_wordNames {
+  height: 30%;
+  width: 30%;
+  overflow: hidden;
+  display: none;
+  position: relative;
+}
+
+.card_ul,
+.card_ul_result {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FFFFFF;
+  width: 100%;
+  text-align: center;
+}
+
+.card_ul li {
+  margin-bottom: 0.1rem;
+  font-size: 0.27rem;
+}
+
+.card_ul_result {
+  top: -38%;
+}
+
+.card_ul_result li {
+  margin-bottom: 0.3rem;
+  opacity: 0.7;
+  font-size: 0.26rem;
+}
+
+.card_ul_result .result_li {
+  opacity: 1;
+  transform: scale(1.2);
+}

@@ -1,0 +1,16 @@
+.input-container{
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  width: 5.88rem;
+  height: 0.92rem;
+  background: url("../../img/bg_input.png");
+  background-size: 100% 100%;
+}
+.input-container>input{
+	border: none;
+	color: #0000FB;
+  width: 4.50rem;
+	font-size: 0.3rem;
+}

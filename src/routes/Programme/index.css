@@ -1,0 +1,14 @@
+
+.slogan {
+  height: 5.65rem;
+}
+.slogan>img{
+	width: 100%;
+}
+.title>img{
+  width: 4rem;
+  height: 0.3rem;
+}
+.space-padding{
+  height: 1rem;
+}

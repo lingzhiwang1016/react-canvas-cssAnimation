@@ -1,0 +1,32 @@
+ul.programme{
+  padding: 0;
+  width: 6.9rem;
+}
+ul.programme>li{
+  list-style: none;
+}
+.img-container{
+  width: 6.9rem;
+}
+ul.programme>li>.img-container>img{
+  padding: 0;
+  margin: 0;
+  border-radius: 0.08rem;
+  width: 100%;
+}
+ul.programme>li>p{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.3rem 0 0.8rem;
+  margin: 0;
+  font-size: 0.3rem;
+  color: #54F1E6;
+}
+ul.programme>li>p>span:nth-child(1){
+  font-size: 0.32rem;
+  margin-bottom: 0.2rem;
+}
+ul.programme>li>p>span:nth-child(2){
+  font-size: 0.24rem;
+}

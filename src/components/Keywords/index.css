@@ -1,0 +1,185 @@
+.card-main{
+  width: 7.06rem; 
+}
+.bg-top, .bg-bottom, .bg-dashed{
+  width: 100%;
+  background-size: 100% 100%;
+}
+.bg-top{
+  height: 0.15rem;
+  background-image: url("../../img/bg_qiandao_top.png");
+}
+.bg-bottom{
+  height: 0.2rem;
+  background-image: url("../../img/bg_qiandao_bottom.png");
+  background-size: 100% 100%;
+}
+.bg-dashed{
+  height: 0.36rem;
+  background-image: url("../../img/bg_qiandao_dashed.png");
+  background-size: 100% 100%;
+}
+.final-keywords{
+  width: 100%;
+  height: 4.4rem;
+  background-image: url("../../img/bg_qiandao_middle.png");
+  background-size: 100% 100%;
+}
+.final-keywords-content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 0.4rem;
+}
+.final-keywords-item{
+  width: 1.14rem;
+  height: 1.10rem;
+  margin: 0.2rem 0.3rem;
+  text-align: center;
+  line-height: 1.2rem;
+  background-image: url("../../img/bg_finalkeyword.png");
+  background-size: 100% 100%;
+  font-size: 0.3rem;
+  color: white;
+}
+.keywords-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-image: url("../../img/bg_qiandao_middle.png");
+  background-size: 100% 100%;
+}
+.keywords-container>img{
+  height: 0.7rem;
+  margin: 0.8rem 0 0.4rem;
+}
+.keywords{
+  width: 6.82rem;
+  height: 6.8rem;
+  position: relative;
+  box-sizing:border-box;
+}
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 0.46rem;
+  width: 1.96rem;
+  height: 2.7rem;
+  font-size: 0.3rem;
+  color: white;
+  background-image: url('../../img/card.png');
+  background-size: 100% 100%;
+}
+.card>img{
+  width: 1.75rem;
+  height: 0.8rem;
+}
+
+.init-state{
+  left: 2.43rem;
+  top: 2.05rem;
+  opacity: 1;
+  transform: scale(0);
+}
+
+.animate1{
+  animation: moveToPosition1 600ms forwards 2500ms;
+}
+.animate2{
+  animation: moveToPosition2 600ms forwards 2000ms;
+}
+.animate3{
+  animation: moveToPosition3 600ms forwards 1500ms;
+}
+.animate4{
+  animation: moveToPosition4 600ms forwards 1000ms;
+}
+.animate5{
+  animation: moveToPosition5 600ms forwards 500ms;
+}
+.animate6{
+  animation: moveToPosition6 600ms forwards 0ms;
+}
+
+@keyframes moveToCenter{
+  0%{
+    opacity: 1;
+    left: 9rem;
+  }
+  100%{
+    opacity: 1;
+    left: 2.4rem;
+  }
+}
+
+@keyframes moveToPosition1{
+  to{
+    left: 0.25rem;
+    top: 0.4rem;
+    transform: scale(1);
+  }
+}
+@keyframes moveToPosition2{
+  to{
+    left: 2.4rem;
+    top: 0.4rem;
+    transform: scale(1);
+  }
+}
+@keyframes moveToPosition3{
+  to{
+    left: 4.6rem;
+    top: 0.4rem;
+    transform: scale(1);
+  }
+}
+@keyframes moveToPosition4{
+  to{
+    left: 0.25rem;
+    top: 3.5rem;
+    transform: scale(1);
+  }
+}
+@keyframes moveToPosition5{
+  to{
+    left: 2.4rem;
+    top: 3.5rem;
+    transform: scale(1);
+  }
+}
+@keyframes moveToPosition6{
+  to{
+    left: 4.6rem;
+    top: 3.5rem;
+    transform: scale(1);
+  }
+}
+
+.target-state1{
+  left: 0.25rem;
+  top: 0.4rem;
+}
+.target-state2{
+  left: 2.4rem;
+  top: 0.4rem;
+}
+.target-state3{
+  left: 4.6rem;
+  top: 0.4rem;
+}
+.target-state4{
+  left: 0.25rem;
+  top: 3.5rem;
+}
+.target-state5{
+  left: 2.4rem;
+  top: 3.5rem;
+}
+.target-state6{
+  left: 4.6rem;
+  top: 3.5rem;
+}

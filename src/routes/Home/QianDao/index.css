@@ -1,0 +1,17 @@
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+
+  padding: 0.2rem;
+  background-color: #f8f8f8;
+}

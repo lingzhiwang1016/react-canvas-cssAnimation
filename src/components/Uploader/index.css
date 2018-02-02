@@ -1,0 +1,59 @@
+.container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.upload-container{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2.28rem;
+	height: 2.28rem;
+	margin: 0.3rem;
+	background: url("../../img/uplpoad.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.upload{
+	margin-top: 0.03rem;
+	margin-left: 0.08rem;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+	overflow: hidden;
+	width: 2.0rem;
+	height: 2.0rem;
+}
+.upload>input, .preview{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.preview{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.preview>img{
+	width: 100%;
+}
+.upload>input{
+	z-index: 999;
+	opacity: 0;
+}
+.font-upload{
+	color: white;
+	font-size: 0.24rem;
+	text-align: center;
+	margin: 0.1rem 0 0.3rem;
+}
+.font-upload>p{
+	margin: 0.1rem;
+	color: rgba(255,255,255,0.6);
+}
+.main-font{
+	color: #fff!important;
+}
