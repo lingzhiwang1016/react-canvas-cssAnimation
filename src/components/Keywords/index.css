@@ -1,5 +1,5 @@
 .card-main{
-  width: 7.06rem; 
+  width: 7.06rem;
 }
 .bg-top, .bg-bottom, .bg-dashed{
   width: 100%;
@@ -26,15 +26,16 @@
   background-size: 100% 100%;
 }
 .final-keywords-content{
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-around; */
   padding: 0 0.4rem;
 }
 .final-keywords-item{
+    float: left;
   width: 1.14rem;
   height: 1.10rem;
-  margin: 0.2rem 0.3rem;
+  margin: 0.2rem 0.45rem;
   text-align: center;
   line-height: 1.2rem;
   background-image: url("../../img/bg_finalkeyword.png");
@@ -42,18 +43,57 @@
   font-size: 0.3rem;
   color: white;
 }
+.congradulate{
+  background-image: url("../../img/bg_qiandao_middle.png");
+  background-size: 100% 100%;
+  padding-top: 0.2rem;
+}
+.congradulate-content{
+  position: relative;
+  width: 6.5rem;
+  height: 3.24rem;
+  margin: auto;
+  background-image: url("../../img/qiandao_jieguo.png");
+  background-size: 100% 100%;
+  padding-top: 0.5rem;
+}
+.congradulate-content>p{
+  text-align: center;
+  font-size: 0.34rem;
+  color: white;
+  margin: 0;
+  padding-top: 1.6rem;
+}
+.congradulate-content>p:nth-child(2){
+  padding-top: 0.1rem;
+}
+.awards{
+  position: absolute;
+  text-align: center;
+  line-height: 2.05rem;
+  right: 0;
+  bottom: -0.8rem;
+  width: 2.66rem;
+  height: 2.05rem;
+  font-size: 0.34rem;
+  color: white;
+  background-image: url("../../img/qiandao_jiangxiang.png");
+  background-size: 100% 100%;
+}
 .keywords-container{
-  display: flex;
+    text-align: center;
+    padding-top: 0.2rem;
+  /* display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
   width: 100%;
   background-image: url("../../img/bg_qiandao_middle.png");
   background-size: 100% 100%;
 }
 .keywords-container>img{
   height: 0.7rem;
-  margin: 0.8rem 0 0.4rem;
+  margin: 0.6rem 0 0.4rem;
 }
 .keywords{
   width: 6.82rem;
@@ -61,14 +101,27 @@
   position: relative;
   box-sizing:border-box;
 }
+.get-ward-rules{
+  background-image: url("../../img/bg_qiandao_middle.png");
+  background-size: 100% 100%;
+}
+.get-ward-rules>p{
+  font-size: 0.3rem;
+  line-height: 0.62rem;
+  padding: 0 0.35rem 0.35rem;
+  margin: 0;
+  color: #333;
+}
 .card{
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  text-align: center;
+  line-height: 2.3rem;
   position: absolute;
   font-size: 0.46rem;
   width: 1.96rem;
-  height: 2.7rem;
+  height: 2.2rem;
   font-size: 0.3rem;
   color: white;
   background-image: url('../../img/card.png');

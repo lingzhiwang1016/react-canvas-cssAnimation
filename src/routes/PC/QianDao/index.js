@@ -6,6 +6,7 @@ import logger from "@/utils/logger";
 import ReconnectingWebSocket from "@/ext/reconnecting-websocket";
 import { allSignUp } from "@/services/auth";
 import config from "@/conf/config";
+import utils from "@/utils/utils";
 
 import styles from "./index.css";
 
@@ -56,7 +57,6 @@ class Index extends React.Component {
   }
 
   onResize = () => {
-    logger.log("CanvasStar", this.CanvasStar, this.CanvasVANK);
     this.CanvasStar && this.CanvasStar.onResize();
     this.CanvasVANK && this.CanvasVANK.onResize();
   }
@@ -109,10 +109,12 @@ class Index extends React.Component {
 
   render() {
     const { allUsers } = this.state;
+    const starUrls = allUsers.map(item => utils.aliossWithStyle(item.avatar, "round100"));
+    const vankeUrls = allUsers.map(item => utils.aliossWithStyle(item.avatar, "c50"));
     return (
       <div styleName="container">
-        <CanvasStar ref={(dom) => this.CanvasStar = dom}/>
-        <CanvasVANK ref={(dom) => this.CanvasVANK = dom} allUsers={allUsers}/>
+        <CanvasStar ref={(dom) => this.CanvasStar = dom} starUrls={starUrls}/>
+        <CanvasVANK ref={(dom) => this.CanvasVANK = dom} urls={vankeUrls}/>
         <PersonCard ref={(dom) => this.PersonCard = dom}/>
       </div>
     );

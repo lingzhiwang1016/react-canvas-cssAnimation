@@ -43,7 +43,7 @@ app._plugin.apply('onHmr')(() => {
 // 初始化
 Promise.all([
   app._store.dispatch({ type: "auth/init" }),
-  weixin()
+  weixin(),
 ]).then(res => {
   logger.log("auth/init res", res);
   render();

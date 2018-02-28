@@ -2,10 +2,8 @@ import React from "react";
 import CSSModules from "react-css-modules";
 import PropTypes from 'prop-types';
 import logger from "@/utils/logger";
-import utils from "@/utils/utils";
 
 import styles from "./index.css";
-import defaultAvatar from "./img/p.jpg";
 
 const config = `1111........1111....1111.........1111.......1111...1111......11111...1111111111111..
 1111.......1111.....11111........1111.......1111...1111.....11111....1111111111111..
@@ -26,19 +24,21 @@ const config = `1111........1111....1111.........1111.......1111...1111......111
 .....11111.....1111.......1111...1111......11111...1111......11111...1111111111111..
 .....11111....1111.........1111..1111.......1111...1111.......11111..1111111111111..`;
 
+const g_scale = 0.8;
+
 @CSSModules(styles)
 class Index extends React.Component {
   static defaultProps = {
-    allUsers: []
+    urls: []
   }
   static propTypes = {
-    allUsers: PropTypes.array
+    urls: PropTypes.array
   }
 
   constructor(props) {
     super(props);
     const arr = config.split("\n");
-    const scale = 25;
+    const scale = 25 * g_scale;
     const width = arr[0].length * scale;
     const height = arr.length * scale;
     const padding = 2;
@@ -55,47 +55,34 @@ class Index extends React.Component {
   }
 
   componentDidMount() {
+    // 设置动画
   }
 
   componentWillReceiveProps(nextProps) {
-    logger.log("componentWillReceiveProps", nextProps);
-    this.handerAllPhoto(nextProps.allUsers);
+    logger.log("vanke componentWillReceiveProps", nextProps);
+    if (nextProps.urls) {
+      this.renderAllPhoto(nextProps.urls);
+    }
   }
 
   componentWillUnmount() {
   }
 
   onResize = () => {
-    this.handerAllPhoto(this.props.allUsers);
+    this.renderAllPhoto(this.props.urls);
   }
 
-  handerDrawPhoto(x, y, w, h, padding, ctx, userInfo) {
-    const photo = new Image();
-    if (userInfo && userInfo.avatar) {
-      photo.src = utils.aliossWithStyle(userInfo.avatar);
-    } else {
-      photo.src = defaultAvatar;
+  renderPhoto(x, y, w, h, padding, ctx, url) {
+    if (url) {
+      const photo = new Image();
+      photo.src = url;
+      photo.onload = function () {
+        ctx.drawImage(photo, x * w, y * h, w - padding, h - padding);
+      };
     }
-
-    // const into = document.createElement("canvas");
-    // const ctx2 = into.getContext("2d");
-    // into.width = w - padding;
-    // into.height = h - padding;
-    photo.onload = function () {
-      // ctx2.drawImage(photo, 0, 0, w - padding, h - padding);
-      // const pattern = ctx.createPattern(into, "repeat");
-      // ctx.beginPath();
-      // // ctx.arc(x * w + (w - padding) / 2, y * h + (w - padding) / 2, (w - padding) / 2, 0, 2 * Math.PI);
-      // ctx.fillRect(x * w, y * h, w - padding, h - padding);
-      // ctx.fillStyle = pattern;
-      // ctx.fill();
-      // ctx.closePath();
-
-      ctx.drawImage(photo, x * w, y * h, w - padding, h - padding);
-    };
   }
 
-  handerAllPhoto(userPhotos) {
+  renderAllPhoto(urls) {
     const {
       scale, width, height, configs, padding
     } = this.state;
@@ -106,15 +93,15 @@ class Index extends React.Component {
     for (let i = 0; i < configs.length; i++) {
       for (let j = 0; j < configs[i].length; j++) {
         if (configs[i][j] === "1") {
-          this.handerDrawPhoto(j, i, scale, scale, padding, ctx, userPhotos[imgIndex]);
+          this.renderPhoto(j, i, scale, scale, padding, ctx, urls[imgIndex]);
           imgIndex++;
         }
       }
     }
 
-    ctx.shadowBlur = 20;
+    ctx.shadowBlur = 20 * g_scale;
     ctx.shadowColor = "rgba(13,0,71,0.5)";
-    ctx.shadowOffsetX = 30;
+    ctx.shadowOffsetX = 30 * g_scale;
     // ctx.shadowOffsetY = 10;
   }
 

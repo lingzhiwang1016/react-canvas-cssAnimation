@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "dva";
 import CSSModules from "react-css-modules";
 import logger from "@/utils/logger";
+import utils from "@/utils/utils";
 import PropTypes from 'prop-types';
 
 import styles from "./index.css";
@@ -22,7 +23,8 @@ class Index extends React.Component {
   componentWillMount() {
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+  }
 
   qiandao = (userInfo) => {
     for (const key in this.state) {
@@ -49,10 +51,11 @@ class Index extends React.Component {
 
 
   render() {
+    const avatar = utils.aliossWithStyle(this.state.avatar, "c500");
     return (
       <ul styleName="person_card" ref={(dom) => this.person_card = dom}>
         <li styleName="person_img" className="person_img_play" ref={(dom) => this.person_img = dom}>
-          <img src={this.state.avatar} alt="個人頭像"/>
+          <img key={avatar} src={avatar} alt="個人頭像"/>
         </li>
         <li styleName="person_info">
           <div styleName="person_name">{this.state.name}</div>

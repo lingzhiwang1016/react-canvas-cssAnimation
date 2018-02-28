@@ -11,7 +11,11 @@ class Index extends React.Component {
   static defaultProps = {
     allWords: [],
     wordResult: [],
-    card_container: ""
+    card_container: "",
+    position: {
+      left: "0%",
+      top: "0%"
+    }
   }
   constructor(props) {
     super(props);
@@ -29,6 +33,14 @@ class Index extends React.Component {
       imgSrc: null
     };
   }
+  componentDidMount = () => {
+    this.cardItem.addEventListener('animationend', evt => {
+      this.cardItem.style.opacity = 1;
+      this.cardItem.style.left = this.props.position.left;
+      this.cardItem.style.top = this.props.position.top;
+      this.cardItem.style.transform = "scale(1)";
+    });
+  }
   componentWillReceiveProps(nextProps) {
     this.setState({
       allWords: nextProps.allWords,
@@ -41,11 +53,11 @@ class Index extends React.Component {
   cardType(card_container) {
     if (card_container === "card_container1") {
       this.setState({
-        imgSrc: require("./img/万.png")
+        imgSrc: require("./img/厦.png")
       });
     } else if (card_container === "card_container2") {
       this.setState({
-        imgSrc: require("./img/科.png")
+        imgSrc: require("./img/万.png")
       });
     } else if (card_container === "card_container3") {
       this.setState({
@@ -53,15 +65,15 @@ class Index extends React.Component {
       });
     } else if (card_container === "card_container4") {
       this.setState({
-        imgSrc: require("./img/节.png")
+        imgSrc: require("./img/晚.png")
       });
     } else if (card_container === "card_container5") {
       this.setState({
-        imgSrc: require("./img/晚.png")
+        imgSrc: require("./img/盛.png")
       });
     } else if (card_container === "card_container6") {
       this.setState({
-        imgSrc: require("./img/会.png")
+        imgSrc: require("./img/典.png")
       });
     } else {
       logger.log("父级传的card_container有问题");
@@ -93,10 +105,23 @@ class Index extends React.Component {
       resultShow: "block"
     });
   }
+  moveToCenter = () => {
+    this.cardItem.style.animationFillMode = "none";
+    this.cardItem.style.left = "42%";
+    this.cardItem.style.top = "33%";
+    this.cardItem.style.zIndex = "999";
+    this.cardItem.style.transform = "scale(1.8)";
+  }
+  moveBack = () => {
+    this.cardItem.style.zIndex = "8";
+    this.cardItem.style.left = this.props.position.left;
+    this.cardItem.style.top = this.props.position.top;
+    this.cardItem.style.transform = "scale(1)";
+  }
 
   render() {
     return (
-      <div styleName={this.state.card_container}>
+      <div styleName={this.state.card_container} ref={dom => this.cardItem = dom}>
         <img style={{ display: this.state.imgShow }} src={this.state.imgSrc} alt="" />
 
         <div styleName="card_wordNames" style={{ display: this.state.ulShow }}>
@@ -128,7 +153,8 @@ class Index extends React.Component {
 Index.propTypes = {
   allWords: PropTypes.array,
   card_container: PropTypes.string,
-  wordResult: PropTypes.array
+  wordResult: PropTypes.array,
+  position: PropTypes.object
 };
 
 export default Index;

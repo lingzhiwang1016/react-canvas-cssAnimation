@@ -27,7 +27,8 @@ class Index extends React.Component {
       imageViewOpen: false,
       imagesList: [],
       imagesListIndex: 0,
-      videoPlay: false
+      videoPlay: false,
+      videoPlay2: false
     };
   }
 
@@ -85,23 +86,21 @@ class Index extends React.Component {
           this.state.videoPlay &&
           <div styleName="video-container">
             <div styleName="touch-area" onClick={() => this.setState({ videoPlay: false })}/>
-            {/*<video
-              src={config.video.src}
-              poster={config.video.poster}
-              x5-video-player-type="h5"
-              playsInline="true"
-              controls
-              autoPlay="autoPlay"
-            >
-              您的浏览器不支持 video 标签。
-              <track kind="captions" src="#" srcLang="zh" label="Chinese" default/>
-            </video>*/}
             <Video config={config.video}/>
             <div styleName="touch-area" onClick={() => this.setState({ videoPlay: false })}/>
           </div>
         }
+        {
+          this.state.videoPlay2 &&
+          <div styleName="video-container">
+            <div styleName="touch-area" onClick={() => this.setState({ videoPlay2: false })}/>
+            <Video config={config.video2}/>
+            <div styleName="touch-area" onClick={() => this.setState({ videoPlay2: false })}/>
+          </div>
+        }
         <Title img={require('@/img/title_ylsp.png')} name="预热视频"/>
         <div styleName="video-start" onClick={() => this.setState({ videoPlay: true })}/>
+        <div styleName="video-start" onClick={() => this.setState({ videoPlay2: true })}/>
         {/*<Video config={config.video}/>*/}
         <Programme onClick={this.imgClick} programs={config.programs}/>
         {

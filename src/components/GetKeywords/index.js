@@ -22,7 +22,9 @@ class GetKeywords extends React.Component {
           { this.props.cardShow ? [
             <div styleName="get-keywords" key="1">
               <div styleName="get-keywords-content">
-                <img src={require('@/img/fonts_cjgjc.png')} alt="抽奖关键词"/>
+                {/*<img src={require('@/img/fonts_cjgjc.png')} alt="抽奖关键词"/>*/}
+                <p>签到成功, 欢迎来到厦万春晚!</p>
+                <p>领取你的春晚抽奖关键词</p>
                 <button onClick={this.props.onClick}>
                   <img src={require('@/img/get_keywords.png')} alt="领取"/>
                 </button>

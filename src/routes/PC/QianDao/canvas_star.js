@@ -1,55 +1,61 @@
 import React from "react";
-import { connect } from "dva";
 import CSSModules from "react-css-modules";
+import PropTypes from 'prop-types';
 import logger from "@/utils/logger";
-import { allSignUp } from "@/services/auth";
 import html5_3d_animation from "./ext/html5_3d_animation.js";
-import cosmos_canvas from "./ext/cosmos_canvas.js";
-import stars from "./ext/stars.js";
 
 import styles from "./index.css";
 
 @CSSModules(styles)
 class Index extends React.Component {
+  static defaultProps = {
+    starUrls: []
+  }
+  static propTypes = {
+    starUrls: PropTypes.array
+  }
+
   constructor(props) {
     super(props);
     this.state = {};
+    this.starAnim = null;
   }
 
   componentWillMount() {
   }
 
   componentDidMount() {
+    this.starAnim = html5_3d_animation(document.getElementById("html5_3d_animation"), {
+      window_width: window.innerWidth,
+      window_height: window.innerHeight,
+      star_urls: this.props.starUrls
+    });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    logger.log("stars componentWillReceiveProps", nextProps);
+    if (nextProps.starUrls && this.starAnim) {
+      this.starAnim.setUrls(nextProps.starUrls);
+    }
   }
 
   componentWillUnmount() {
   }
 
   onResize = () => {
-    this.handerStar();
+    logger.log("stars onResize");
+    if (this.starAnim) {
+      this.starAnim.reseize(window.innerWidth, window.innerHeight);
+    }
   }
 
-  handerStar() {
-    this.renderStar1();
-  }
-
-  renderStar1() {
-    html5_3d_animation(document.getElementById("html5_3d_animation"), {
-      window_width: window.innerWidth,
-      window_height: window.innerHeight,
-      star_count: 1500,
-      star_color: '#59FCFF',
-      star_depth: 100,
-    });
-  }
-
-  renderStar2() {
-    cosmos_canvas("html5_3d_animation", 230, 1000, 60, 2, 50000, 0.5);
-  }
-
-  renderStar3() {
-    stars("html5_3d_animation");
-  }
+  // renderStar2() {
+  //   cosmos_canvas("html5_3d_animation", 230, 1000, 60, 2, 50000, 0.5);
+  // }
+  //
+  // renderStar3() {
+  //   stars("html5_3d_animation");
+  // }
 
   render() {
     return (

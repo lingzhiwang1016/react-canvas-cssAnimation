@@ -10,7 +10,7 @@
 
 .container {
   height: 100%;
-  background-image: url("./img/大背景.jpg");
+  background-image: url("./img/qiandao_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -44,7 +44,7 @@
   top: 42%;
   opacity: 0;
   transform: translateX(-50%);
-  background-image: url("./img/签到卡背景.png");
+  background-image: url("./img/qiandao_card_bg.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -59,14 +59,18 @@
   justify-content: flex-start;
   padding-left: 5.5rem;
 }
-:global .animation_card_play{
-  animation: mytwo 5s linear  forwards;
-}
-:global .animation_card_replay{
-  animation: mytwo1 5s linear  forwards;
+
+:global .animation_card_play {
+  animation: mytwo 5s linear forwards;
 }
 
-:global @keyframes mytwo {
+:global .animation_card_replay {
+  animation: mytwo1 5s linear forwards;
+}
+
+:global
+
+@keyframes mytwo {
   0% {
     opacity: 0
   }
@@ -80,7 +84,10 @@
     opacity: 0
   }
 }
-:global @keyframes mytwo1 {
+
+:global
+
+@keyframes mytwo1 {
   0% {
     opacity: 0
   }
@@ -103,7 +110,7 @@
 }
 
 .person_img {
-  background-image: url("./img/头像背景.png");
+  background-image: url("./img/qiandao_photo_bg.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -116,14 +123,18 @@
   align-items: center;
   justify-content: center;
 }
-:global .animation_img_play{
+
+:global .animation_img_play {
   animation: myfirst 5s linear forwards;
 }
-:global .animation_img_replay{
+
+:global .animation_img_replay {
   animation: myfirst1 5s linear forwards;
 }
 
-:global @keyframes myfirst {
+:global
+
+@keyframes myfirst {
   0% {
     transform: scale(0)
   }
@@ -138,7 +149,9 @@
   }
 }
 
-:global @keyframes myfirst1 {
+:global
+
+@keyframes myfirst1 {
   0% {
     transform: scale(0)
   }
@@ -152,6 +165,7 @@
     transform: scale(0)
   }
 }
+
 .person_img img {
   width: 2.48rem;
   height: 2.48rem;

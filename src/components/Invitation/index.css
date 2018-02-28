@@ -1,8 +1,24 @@
+.bg-top, .bg-bottom, .bg-dashed{
+  width: 100%;
+  background-size: 100% 100%;
+}
+.bg-top{
+  height: 0.15rem;
+  background-image: url("../../img/bg_qiandao_top.png");
+}
+.bg-bottom{
+  height: 0.2rem;
+  background-image: url("../../img/bg_qiandao_bottom.png");
+  background-size: 100% 100%;
+}
+.bg-dashed{
+  height: 0.36rem;
+  background-image: url("../../img/bg_qiandao_dashed.png");
+  background-size: 100% 100%;
+}
 .invitation{
   width: 7.06rem;
-  height: 9.6rem;
-  background: url("../../img/bg_invitation.png");
-  background-size: 100% 100%;
+  /*height: 9.6rem;*/
 }
 .time{
   width: 100%;
@@ -23,6 +39,8 @@
   padding: 0;
   width: 100%;
   height: 3.10rem;
+  background: url("../../img/bg_qiandao_middle.png");
+  background-size: 100% 100%;
 }
 .number>ul{
   margin:0;
@@ -43,10 +61,12 @@
   margin: 0rem 0.2rem 0.4rem;
 }
 .welcome{
+  width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  height: 6.5rem;
   padding: 0rem 0.5rem;
+  background: url("../../img/bg_qiandao_middle.png");
+  background-size: 100% 100%;
 }
 .welcome>img{
   display: block;
@@ -111,7 +131,7 @@
   margin-top: 0.05rem;
 }
 .p-list{
-  height: 0.5rem;
+  height: 0.6rem;
   display: flex;
   align-items: center;
 }
@@ -120,4 +140,8 @@
   width: 1.0rem;
   font-weight: bold;
   padding: 0;
+}
+.sub-title{
+  font-size: 0.3rem;
+  font-weight: bold;
 }

@@ -25,37 +25,6 @@ export const patten = {
 };
 
 const funcs = {
-  // 跳转的域名
-  getProxyOrigin() {
-    const state = process.env.REACT_APP_PACK_ENV;
-    if (state === "production") {
-      return "http://annual.maysatech.com";
-    } else if (state === "alpha") {
-      return "http://annual.maysatech.com";
-    } else {
-      return "http://annual.maysatech.com";
-    }
-  },
-  // 根据状态，proxy需要跳转的新域名
-  getOrigin(state) {
-    const code = this.getPublicCode();
-    if (state === "production") {
-      return "http://annual.maysatech.com";
-    } else if (state === "alpha") {
-      return "http://annual-t.maysatech.com";
-    } else {
-      return "http://annual-d.maysatech.com";
-    }
-  },
-  getPublicCode() {
-    if (process.env.REACT_APP_PACK_ENV === "production") {
-      return "maysa";
-    } else if (process.env.REACT_APP_PACK_ENV === "alpha") {
-      return "maysa";
-    } else {
-      return "maysa";
-    }
-  },
   sleep(mills) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {

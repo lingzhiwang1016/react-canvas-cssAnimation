@@ -4,14 +4,18 @@
 export default {
   position: { name: "会展", longitude: 118.182100, latitude: 24.470220 },
   video: {
-    src: "http://ecology-res.oss-cn-shanghai.aliyuncs.com/vanke-annual-prehot-video.mp4",
+    src: "http://cdn-vk-html.maysatech.com/annual-wx-alpha/video/video_wanke.mp4",
+    poster: "http://cdn-vk-html.maysatech.com/annual-wx-alpha/video/poster.jpg"
+  },
+  video2: {
+    src: "http://cdn-vk-html.maysatech.com/annual-wx-alpha/video/video_wanke2.mp4",
     poster: "http://cdn-vk-html.maysatech.com/annual-wx-alpha/video/poster.jpg"
   },
   programs: [
     {
       name: "1. 秘密花园",
       imgUrl: "http://cdn-vk-html.maysatech.com/annual-wx-alpha/images/01_weimixiu.png",
-      department: "吕晓曦、周琪、李晓静、林霏、高汉杰、赖靖等",
+      department: "周琪、姚珊、林婉、李晓静、张甜丽、杨雅婷、林寒如、田雅雯、邓小莲、陈婵娟、曾晶晶、沈晓晴、黄麒浩、高汉杰、林霏、郑金、赖靖、陈裕鹏、蒋浩、李安达、凌伟",
     },
     {
       name: "2. 地表最强鼓舞",

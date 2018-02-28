@@ -17,14 +17,27 @@ import styles from "./index.css";
 
 @CSSModules(styles)
 class Index extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      videoPlay: false
+    };
+  }
   render() {
     const { loginUser } = this.props.auth;
     return (
-      <div className="bg" styleName="bg-trailer">
+      <div styleName="bg-trailer">
         <SloganSmall/>
+        {
+          this.state.videoPlay &&
+          <div styleName="video-container">
+            <div styleName="touch-area" onClick={() => this.setState({ videoPlay: false })}/>
+            <Video config={config.video}/>
+            <div styleName="touch-area" onClick={() => this.setState({ videoPlay: false })}/>
+          </div>
+        }
         <Title img={require('@/img/title_ylsp.png')} name="预热视频"/>
-        <Video config={config.video}/>
-        <div styleName="space-padding"/>
+        <div styleName="video-start" onClick={() => this.setState({ videoPlay: true })}/>
       </div>
     );
   }

@@ -1,15 +1,13 @@
 /**
  * Created by lijinchao(joshua) on 2018/1/25.
  */
-import request from "@/utils/request";
 import logger from "@/utils/logger";
+import request from "@/utils/request";
+import config from "@/conf/config";
 import wx from "wx";
 
 const configWeiXin = () => {
-  const title = "万科年会2017";
-  const desc = "万科年会2017-大吉大利";
-  const link = "http://annual.maysatech.com";
-  const imgUrl = "http://cdn-vk-html.maysatech.com/annual-wx-pro/share.jpg";
+  const { title, desc, link, imgUrl } = config.wxShareConfig;
   wx.error(err => {
     // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
     logger.log("微信err", err);
@@ -99,26 +97,21 @@ const configWeiXin = () => {
   });
 };
 
-export default async (configUrl) => {
-  let url = window.location.href.split("#")[0];
-  if (configUrl) {
-    url = configUrl;
-  }
-  url = encodeURI(url);
-  const api = "http://service-demo.vkcommerce.com/vankely-mp-merchant-api/wechat/jsapi/signature";
+export default async () => {
+  const url = window.location.href.split("#")[0];
   logger.log("wx config url", url);
-  // alert(url);
-  return request(api, {
+
+  return request(config.wxSignature, {
     method: "get",
     params: {
       url,
-      wechatCode: "maysa001"
+      publicCode: config.getPublicCode(),
+      wechatCode: config.getPublicCode()
     }
   }).then(res => {
     logger.log("微信config res", res);
-
     wx.config({
-      debug: process.env.REACT_APP_PACK_ENV === "development", // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+      debug: config.env === "development", // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
       appId: res.data.appid, // 必填，企业微信的cropID
       timestamp: res.data.timestamp, // 必填，生成签名的时间戳
       nonceStr: res.data.noncestr, // 必填，生成签名的随机串

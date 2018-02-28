@@ -18,10 +18,11 @@ class Video extends React.Component {
           styleName="video"
           src={src}
           poster={poster}
-          preload="auto"
+          // preload="auto"
           controls
           x5-video-player-type="h5"
           playsInline="true"
+          autoPlay="auotPlay"
         >
           您的浏览器不支持 video 标签。
           <track kind="captions" src="#" srcLang="zh" label="Chinese" default/>

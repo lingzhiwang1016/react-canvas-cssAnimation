@@ -5,6 +5,7 @@ import Route from "react-router-hooks";
 import PropTypes from "prop-types";
 import dynamic from "dva/dynamic";
 
+import config from "@/conf/config";
 import weixin from "@/utils/weixin";
 import logger from "@/utils/logger";
 import Error from "./routes/Error";
@@ -88,6 +89,10 @@ const RouterConfig = ({ history, app }) => {
     app,
     component: () => import("./routes/Trailer"),
   });
+  const Trailer2 = dynamic({
+    app,
+    component: () => import("./routes/Trailer2"),
+  });
   const Programme = dynamic({
     app,
     component: () => import("./routes/Programme"),
@@ -135,6 +140,10 @@ const RouterConfig = ({ history, app }) => {
       component: Trailer,
     },
     {
+      path: "/trailer2",
+      component: Trailer2,
+    },
+    {
       path: "/programme",
       component: Programme,
     },
@@ -162,11 +171,11 @@ const RouterConfig = ({ history, app }) => {
       component: DefaultLayoutComponent,
       routes: [
         {
-          path: "/pc/choujiang",
+          path: `/pc/choujiang${config.env === 'production' ? '_made_by_maysa' : ''}`,
           component: ChouJiang,
         },
         {
-          path: "/pc/qiandao",
+          path: `/pc/qiandao${config.env === 'production' ? '_made_by_maysa' : ''}`,
           component: PCQianDao,
         },
       ],

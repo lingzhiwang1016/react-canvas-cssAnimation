@@ -6,6 +6,7 @@ import utils from "@/utils/utils";
 import cache from "@/utils/cache";
 import request from "@/utils/request";
 import api from "@/conf/api";
+import config from "@/conf/config";
 import { CacheKeys } from "@/conf/constants";
 
 export default {
@@ -67,12 +68,12 @@ export default {
       logger.log("redirectLogin originUrl", originUrl);
       cache.cacheSet(CacheKeys.redirectUrl, originUrl, 1 * 3600 * 1000);
 
-      const state = process.env.REACT_APP_PACK_ENV;
-      let signUpUrl = utils.getProxyOrigin() + "/login";
+      const state = config.env;
+      let signUpUrl = config.getProxyOrigin() + "/login";
       if (state !== "production") {
-        signUpUrl = utils.getProxyOrigin() + "/proxy_login";
+        signUpUrl = config.getProxyOrigin() + "/proxy_login";
       }
-      const publicCode = utils.getPublicCode();
+      const publicCode = config.getPublicCode();
       const res = yield call(redirectWeiXin, signUpUrl, state, publicCode);
       window.location.replace(res.data);
       yield utils.sleep(2000);
@@ -82,8 +83,10 @@ export default {
     // 使用微信code尝试登录
     * wxLogin({ payload: wxCode }, { call, put }) {
       logger.log("wxLogin wxCode", wxCode);
-      const publicCode = utils.getPublicCode();
+      const publicCode = config.getPublicCode();
+      logger.log("wxLogin wxCode1", wxCode);
       const res = yield call(getToken, wxCode, publicCode);
+      logger.log("wxLogin wxCode2", wxCode);
       logger.log("wxLogin wxCode res", res);
       yield put({ type: "wxCode", payload: { wxCode: res.data } });
       yield put({ type: "login", payload: { wxToken: res.data.tokenId } });

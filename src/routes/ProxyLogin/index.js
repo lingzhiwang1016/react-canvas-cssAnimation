@@ -5,6 +5,7 @@ import { ActivityIndicator } from "antd-mobile";
 import PropTypes from "prop-types";
 import queryString from "query-string";
 
+import config from "@/conf/config";
 import logger from "@/utils/logger";
 import utils from "@/utils/utils";
 import styles from "./index.css";
@@ -22,7 +23,7 @@ class Index extends React.Component {
 
   componentWillMount() {
     logger.log("proxy login state:", this.wechatState);
-    const origin = utils.getOrigin(this.wechatState);
+    const origin = config.getOrigin(this.wechatState);
     logger.log("redirect to origin", origin);
     window.location.replace(`${origin}/login?code=${this.wechatCode}&state=${this.wechatState}`);
   }

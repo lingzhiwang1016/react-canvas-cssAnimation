@@ -7,6 +7,17 @@
   box-sizing: border-box;
   position: relative;
 }
+.mask{
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: opacity 2s;
+  z-index: 9;
+}
 /* 闪电 */
 .shanDian1{
   position: absolute;
@@ -45,21 +56,39 @@
 @value animation_timeOut_six: 1.5s; /* 第六张卡片延迟执行时间 */
 /* 抽奖卡片 */
 .card_container1{
+  left: 8.7%;
+  top: 50.5%;
+  transform: scale(1);
   animation: myfirst animation_time ease-out animation_timeOut_first animation_count;
 }
 .card_container2{
+  left: 22.9%;
+  top: 48.1%;
+  transform: scale(1);
   animation: mytwo animation_time ease-out animation_timeOut_two animation_count;
 }
 .card_container3{
+  left: 37.2%;
+  top: 50.9%;
+  transform: scale(1);
   animation: mythree animation_time ease-out animation_timeOut_three animation_count;
 }
 .card_container4{
+  left: 51.4%;
+  top: 47.3%;
+  transform: scale(1);
   animation: myfour animation_time ease-out animation_timeOut_four animation_count;
 }
 .card_container5{
+  left: 65.2%;
+  top: 53.1%;
+  transform: scale(1);
   animation: myfive animation_time ease-out animation_timeOut_five animation_count;
 }
 .card_container6{
+  left: 79.9%;
+  top: 49%;
+  transform: scale(1);
   animation: mysix animation_time ease-out animation_timeOut_six animation_count;
 }
 .card_container1,
@@ -79,69 +108,93 @@
   box-sizing: border-box;
   height: 6.09rem;
   width: 5.18rem;
-  top: -44.8%;
-  left: 50%;
-  transform: translateX(-50%);
-  animation-fill-mode: forwards;
+  opacity: 0;
+  transition: left 2s,top 2s,transform 2s;
+  /*transform: translateX(-50%);*/
+  /*animation-fill-mode: forwards;*/
 }
 @keyframes myfirst {
   0% {
     transform: scale(0);
+    opacity: 1;
+    top: -44.8%;
+    left: 50%;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
     left: 8.7%;
-    top: 41.5%;
+    top: 50.5%;
   }
 }
 @keyframes mytwo {
   0% {
     transform: scale(0);
+    opacity: 1;
+    top: -44.8%;
+    left: 50%;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
     left: 22.9%;
-    top: 36.1%;
+    top: 48.1%;
   }
 }
 @keyframes mythree {
   0% {
     transform: scale(0);
+    opacity: 1;
+    top: -44.8%;
+    left: 50%;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
     left: 37.2%;
-    top: 39.9%;
+    top: 50.9%;
   }
 }
 @keyframes myfour {
   0% {
     transform: scale(0);
+    opacity: 1;
+    top: -44.8%;
+    left: 50%;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
     left: 51.4%;
-    top: 34.3%;
+    top: 47.3%;
   }
 }
 @keyframes myfive {
   0% {
     transform: scale(0);
+    opacity: 1;
+    top: -44.8%;
+    left: 50%;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
     left: 65.2%;
-    top: 35.1%;
+    top: 53.1%;
   }
 }
 @keyframes mysix {
   0% {
     transform: scale(0);
+    opacity: 1;
+    top: -44.8%;
+    left: 50%;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
     left: 79.9%;
-    top: 31%;
+    top: 49%;
   }
 }
 .card_container1 img,
@@ -154,7 +207,7 @@
 }
 .card_wordNames{
   height: 32%;
-  width: 30%;
+  width: 45%;
   overflow: hidden;
   position: relative;
   align-items: center;
@@ -166,7 +219,7 @@
   padding: 0;
   margin: 0;
   position: absolute;
-  left: 50%;
+  left: 48%;
   transform: translateX(-50%);
   color: #FFFFFF;
   width: 100%;
@@ -174,13 +227,14 @@
   font-size: 0.42rem;
 }
 .card_ul li{
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.2rem;
 }
 .card_ul_result li{
-  margin-bottom: 0.2rem;
-  opacity: 0.4;
+  margin: 0.9rem 0;
+  opacity: 0;
 }
 .card_ul_result .result_li{
   opacity: 1;
-  transform: scale(1.2);
+  transform: scale(2);
+  margin-top: -0.2rem;
 }

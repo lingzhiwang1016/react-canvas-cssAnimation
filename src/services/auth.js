@@ -1,8 +1,9 @@
 import request, { LogicError } from "@/utils/request";
 import api from "@/conf/api";
+import config from "@/conf/config";
 
 export const redirectWeiXin = (redirectUrl, state, publicCode) => {
-  return request(api.weixin_redirect_url, {
+  return request(config.wxRedirectUrl, {
     method: "get",
     params: {
       url: redirectUrl,
@@ -20,7 +21,7 @@ export const currentUser = () => {
 };
 
 export const getToken = (authCode, publicCode) => {
-  return request(api.weixin_token, {
+  return request(config.wxTransToken, {
     method: "get",
     params: {
       authCode,
@@ -30,7 +31,7 @@ export const getToken = (authCode, publicCode) => {
 };
 
 export const weixinLogin = (wxToken) => {
-  return request(api.weixin_login, {
+  return request(config.wxLogin, {
     method: "post",
     data: {
       wxToken
@@ -100,5 +101,28 @@ export const allSignUp = (telephone) => {
 export const allSignUpCount = () => {
   return request(api.count_sign_up, {
     method: "get"
+  });
+};
+
+// 厦万春晚关键词 - add by luo
+export const prizeInfo = () => {
+  return request(api.prize_info, {
+    method: "get",
+    useToken: true
+  });
+};
+
+// 厦万春晚关键词 - add by luo
+export const prizeOpen = () => {
+  return request(api.prize_open, {
+    method: "post",
+    useToken: true
+  });
+};
+
+export const qiandaoStatus = () => {
+  return request(api.sign_in_status, {
+    method: "get",
+    useToken: true
   });
 };
