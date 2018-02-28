@@ -24,7 +24,7 @@ module.exports = {
     "no-useless-escape": 0, // 用不到的字符
     "prefer-destructuring": 0, // 建议使用结构赋值
     "comma-dangle": 0, // json的最后一个不要求必填
-
+    "object-curly-newline": 0, // obj展开
     "quotes": [0, "double"], // 双引号
 
     // warnning
